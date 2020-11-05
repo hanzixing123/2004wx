@@ -12,22 +12,36 @@ class IndexController extends Controller
 
 
     public function  index(){
-    	// $data=["name"=>"LZY","pwd"=>123456];
+        $echostr = request()->get("echostr", "");
+        if ($this->checkSignature() && !empty($echostr)) {
 
-    	// $res=DB::table("user")->insert($data);
-    	// if($res){
-    	// $res=	DB::table("user")->get();
-    	// 	dd($res);
+            //第一次接入
+            echo $echostr;
+        }
 
-    	//}
-		//echo "杨楠吃屎";
-        Redis::set("lzy","ok");
-        echo    Redis::get("lzy");
-
-    }
-    public function list(){
 
     }
 
+
+
+
+    private function checkSignature()
+    {
+        $signature = $_GET["signature"];
+        $timestamp = $_GET["timestamp"];
+        $nonce = $_GET["nonce"];
+
+        $token ="lishang";
+        $tmpArr = array($token, $timestamp, $nonce);
+        sort($tmpArr, SORT_STRING);
+        $tmpStr = implode( $tmpArr );
+        $tmpStr = sha1( $tmpStr );
+
+        if( $tmpStr == $signature ){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 }

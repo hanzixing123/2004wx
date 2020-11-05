@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f52d58c2-3092-4b3d-98bd-e474f7acbb78" name="2004wx" url="http://hanzixing.yangwenlong.top">
+        <fileTransfer host="hanzixing.yangwenlong.top" port="22" rootFolder="/www/2004wx/" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

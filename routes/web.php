@@ -14,5 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get("/yangnan","WX\IndexController@index");
+Route::get("/Han","WX\IndexController@index");
 
