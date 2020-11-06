@@ -18,9 +18,20 @@ class IndexController extends Controller
             echo $echostr;
         }else{
 
-            $access_token=$this->get_access_token();  //跳方法  调 access_token
-//            file_put_contents("bbb.txt",$access_token["access_token"]);
-            dd($access_token);
+           // $access_token=$this->get_access_token();  //跳方法  调 access_token  获取access_token
+            $str=file_get_contents("php://input");
+            $obj = simplexml_load_string($str,"SimpleXMLElement",LIBXML_NOCDATA);
+            $obj=json_decode($obj, true);
+               file_put_contents("aaa.txt",$obj);
+               echo "ok";
+       
+
+
+
+
+
+
+
         }
 
 
