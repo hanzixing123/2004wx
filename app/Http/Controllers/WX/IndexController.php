@@ -4,7 +4,6 @@ namespace App\Http\Controllers\WX;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use DB;
 use Illuminate\Support\Facades\Redis;
 class IndexController extends Controller
 {
@@ -17,7 +16,13 @@ class IndexController extends Controller
 
             //第一次接入
             echo $echostr;
+        }else{
+
+            $access_token=$this->get_access_token();  //跳方法  调 access_token
+//            file_put_contents("bbb.txt",$access_token["access_token"]);
+            dd($access_token);
         }
+
 
 
     }
@@ -27,9 +32,9 @@ class IndexController extends Controller
 
     private function checkSignature()
     {
-        $signature = $_GET["signature"];
-        $timestamp = $_GET["timestamp"];
-        $nonce = $_GET["nonce"];
+        $signature = request()->get("signature");
+        $timestamp = request()->get("timestamp");
+        $nonce = request()->get("nonce");
 
         $token ="lishang";
         $tmpArr = array($token, $timestamp, $nonce);
