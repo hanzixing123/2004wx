@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b36088a5-53b3-40a2-9a08-ef4c7d4e1411" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WX/IndexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WX/IndexController.php" />
-    </list>
+    <list default="true" id="b36088a5-53b3-40a2-9a08-ef4c7d4e1411" name="默认的" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,10 +25,10 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WX/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="33">
-              <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="37" />
+              <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
               <folding>
                 <element signature="e#43#79#0#PHP" expanded="true" />
-                <marker date="1604714712095" expanded="true" signature="3034:3351" ph="..." />
+                <marker date="1604817625364" expanded="true" signature="6865:7182" ph="..." />
               </folding>
             </state>
           </provider>
@@ -40,21 +37,11 @@
       <file leaf-file-name="IndexController.php" pinned="true" current-in-tab="true">
         <entry file="remoteDeploymentFS://&lt;f52d58c2-3092-4b3d-98bd-e474f7acbb78&gt;/app/Http/Controllers/WX/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="83" column="25" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+            <state relative-caret-position="371">
+              <caret line="83" column="71" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
               <folding>
-                <marker date="0" expanded="true" signature="6865:7182" ph="..." />
+                <marker date="0" expanded="true" signature="6866:7183" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.php" pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;f52d58c2-3092-4b3d-98bd-e474f7acbb78&gt;/app/Http/Controllers/Controller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="28" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -320,12 +307,12 @@
       <workItem from="1604535899796" duration="10396000" />
       <workItem from="1604629807850" duration="23864000" />
       <workItem from="1604710079492" duration="19404000" />
-      <workItem from="1604811218838" duration="6160000" />
+      <workItem from="1604811218838" duration="7336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59824000" />
+    <option name="totallyTimeSpent" value="61000000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -425,7 +412,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#43#79#0#PHP" expanded="true" />
-            <marker date="1604714712095" expanded="true" signature="3034:3351" ph="..." />
+            <marker date="1604817625364" expanded="true" signature="6865:7182" ph="..." />
           </folding>
         </state>
       </provider>
@@ -436,7 +423,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#43#79#0#PHP" expanded="true" />
-            <marker date="1604714712095" expanded="true" signature="3034:3351" ph="..." />
+            <marker date="1604817625364" expanded="true" signature="6865:7182" ph="..." />
           </folding>
         </state>
       </provider>
@@ -485,10 +472,10 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WX/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
-          <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="37" />
+          <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
           <folding>
             <element signature="e#43#79#0#PHP" expanded="true" />
-            <marker date="1604714712095" expanded="true" signature="3034:3351" ph="..." />
+            <marker date="1604817625364" expanded="true" signature="6865:7182" ph="..." />
           </folding>
         </state>
       </provider>

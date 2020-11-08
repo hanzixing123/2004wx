@@ -83,14 +83,14 @@ class IndexController extends Controller
                                 $content="";
 //                                file_put_contents("zotong.txt","走通");
                                 //$content.=$shuju["reason"]."\n"; //查询成功，
-                                $content.=$shuju["result"]["city"]."\n";//查询的城市
+                                $content.=$shuju["result"]["city"]."当天天气"."\n";//查询的城市
                                     $dangqian=$shuju["result"]["realtime"];
-                                $content.="温度->".$dangqian["temperature"]."\n";// 当前温度.
-                                $content.="湿度->".$dangqian["humidity"]."\n";//humidity 湿度
-                                $content.="天气情况->".$dangqian["info"]."\n";   //info 天气情况
-                                $content.="风向->".$dangqian["direct"]."\n"; //direct 风向
-                                $content.="风力->".$dangqian["power"]."\n"; //direct 风力
-                                $content.="空气质量->".$dangqian["aqi"]."\n"; //direct 空气质量
+                                $content.="温度☞".$dangqian["temperature"]."\n";// 当前温度.
+                                $content.="湿度☞".$dangqian["humidity"]."\n";//humidity 湿度
+                                $content.="天气情况☞".$dangqian["info"]."\n";   //info 天气情况
+                                $content.="风向☞".$dangqian["direct"]."\n"; //direct 风向
+                                $content.="风力☞".$dangqian["power"]."\n"; //direct 风力
+                                $content.="空气质量☞".$dangqian["aqi"]."\n"; //direct 空气质量
                                 $content.="以下是未来天气情况"."\n";
                                 $future = $shuju["result"]["future"];
                                     foreach ($future as $k => $v) {
