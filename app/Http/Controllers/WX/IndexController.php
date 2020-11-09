@@ -100,10 +100,69 @@ class IndexController extends Controller
                                         $content .= $v["direct"] ."\n";
                                     }
                             }else{//走到这里说明调用天气接口已经失败了，可以提示用户调用的方法
-                                    $content="如果您想查看天气情况,请输入天气:地址(如 天气:邯郸,会给您返回邯郸当天及未来几天的天气情况.注意 “:”为英文的冒号,只支持国内天气查询)";
+                                   //  尝试使用文本调用 机器人  // $text 用户所发的文本
+                                 $text=$obj->Content;  //走到这里说明 格式不是   天气：地址，掉的不是天气接口  那就走机器人接口
+                         $url="http://openapi.tuling123.com/openapi/api/v2";//请求地址
+                         //  调用接口所需的数据
+                         $data=[
+                             "perception"=>[
+                                 "inputText"=>[
+                                     "text"=>$text
+                                 ]
+                             ],
+                             "userInfo"=>[
+                                 "apiKey"=>"b64cdee0866743ab95c03e2c225518e9",
+                                 "userId"=>1
+                             ]
+                         ];
+                         $shuju=json_encode($data);
+                         $shuju=$this->http_post($url,$shuju);
+                         $data=json_decode($shuju,true);
+//                            file_put_contents("jqr.txt",$shuju["results"][0]["values"]["text"]);
+                         if($data["intent"]["code"]!=5000) {
+                             $content = $data["results"][0]["values"]["text"];
+                         }else{
+                             $content="";
+                             $content.="机器人出错,可能是接口调用达到上限,请联系懒癌患者的管理员,手机号:13521378470 QQ 2397075084,报错了可回复,看到也是不回的(谨记)";
+                             $content.="当前天气已开发,如果您想查看天气情况,请输入天气:地址(如 天气:邯郸,会给您返回邯郸当天及未来几天的天气情况.注意 “:”为英文的冒号,只支持国内天气查询)";
+
+                         }
                             }
                     break;
+                // 聊天机器人  图灵机器人
+                    case "voice": //语音类型为 voice  // 在公众号中使用 语音  就调用 图灵机器人进行对话
+                    // 使用测试号发送语音，  微信服务器给我们的服务器发送的 XML 数据中  会有 Recognition
+                    //  它是将 我们所说的语音 转换为文字, 再调用 接口 发送给 图灵机器人, 使他回话.
+                        //$content=$obj->Recognition;//说什么反什么
+                        $text=$obj->Recognition;// 用户所说的内容 (微信服务器分析的);
+                        $url="http://openapi.tuling123.com/openapi/api/v2";//请求地址
+                        //  调用接口所需的数据
+                        $data=[
+                            "perception"=>[
+                                "inputText"=>[
+                                        "text"=>$text
+                                ]
+                             ],
+                             "userInfo"=>[
+                                 "apiKey"=>"605ae0fe45094384a5b0ef2bf98209ff",
+                                 "userId"=>1
+                             ]
+                        ];
+                            // 接口 要求 post的方式调用 所以使用封装的 curl的post的方法
+                                $shuju=json_encode($data);
+                                $shuju=$this->http_post($url,$shuju);
+                                $data=json_decode($shuju,true);
+//                            file_put_contents("jqr.txt",$shuju["results"][0]["values"]["text"]);
+                            if($data["intent"]["code"]!=5000) {
+                                $content = $data["results"][0]["values"]["text"];
+                            }else{
+                                $content="机器人出错,请联系懒癌患者的管理员,手机号:13521378470 QQ 2397075084,报错了可回复,看到也是不回的(谨记)";
+                            }
+
+                    break;
             }
+
+
             echo $this->xiaoxi($obj,$content);
         }
     }
