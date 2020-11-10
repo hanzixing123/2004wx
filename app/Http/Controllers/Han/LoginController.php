@@ -18,7 +18,9 @@ class LoginController extends Controller
 				  $wetch_user = request()->wetch_user;
 
 				   $wetch_pwd = request()->wetch_pwd;
-			
+//				    $wdan=Md5("wdan");
+//                return json_encode(['error_no'=>1,'error_msg'=>"$wdan"]);
+
 				   $rember = [
 			
 					 'wetch_user'=>$wetch_user,
@@ -26,25 +28,26 @@ class LoginController extends Controller
 			
 				   ];
 	  				if(empty($wetch_user)){
-				        error("用户名不能为空!"); 
-				   	}
+                        return json_encode(['error_no'=>1,'error_msg'=>"用户名不能为空"]);exit;
+                    }
 				    if(empty($wetch_pwd)){
-				   
-				        error("密码不能为空!"); 
+                        return json_encode(['error_no'=>1,'error_msg'=>"密码不能为空"]);exit;
 				    }
 			
 				  $login=LoginModel::where('wetch_user',$wetch_user)->first();
 				  if(!$login){
-				     error("用户名或者密码错误!");
+                      return json_encode(['error_no'=>1,'error_msg'=>"用户名或者密码错误"]);exit;
 				  }
-				  if(password_verify($wetch_pwd,$login['wetch_pwd'])){
+				  if(md5($wetch_pwd)==$login['wetch_pwd']){
 					   if(isset(request()->rember)){
  			                   Cookie::queue('rember',serialize($rember),60*24*7);
  			           }
 					   session(['users'=>$rember]);
- 			          success("登陆成功");
+                      return  json_encode(['error_no'=>0,'error_msg'=>"登陆成功"]);
+ 			          //success("登陆成功");
 				}else{
-				       error("用户名或者密码错误!");
+                      return json_encode(['error_no'=>1,'error_msg'=>"用户名或者密码错误"]);exit;
+//				       error("用户名或者密码错误!");
 				}
 			
 			

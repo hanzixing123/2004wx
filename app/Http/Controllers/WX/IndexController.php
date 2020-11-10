@@ -71,6 +71,24 @@ class IndexController extends Controller
                     }
                     break;
                 case "text":
+                    if($obj->Content=="讲一个笑话"){
+                            $key="97523726128a559ff65855dfd1fdd9bc";
+                            $url="http://v.juhe.cn/joke/content/list.php?key=".$key."&page=".rand(1,20)."&pagesize=15&sort=desc&time=".time();
+                            $res=json_decode($this->http_get($url),true);// 调用的笑话结果  并转化为了数组
+                            if($res["error_code"]==0){//调用接口成功
+                                $data= $res["result"]["data"];//["data"];//["data"];
+                                  // file_put_contents("ceshi.txt", json_encode($data));
+                                $content="";
+                                foreach($data as $k=>$v){
+                                    $content.=$v["content"]."\n";
+                                }
+                                file_put_contents("ceshi.txt",$content);
+                               // echo $this->xiaoxi($obj,$content);die;
+                            }
+
+                        }//else{
+
+
                     //首先呢先要判断一下，接来的用户消息中是否有 包含天气：地址，
                             // 把用户发来的消息中 天气：替换为空，使用 str_replace 函数
                           $dizhi=urlencode(str_replace("天气:","",$obj->Content));

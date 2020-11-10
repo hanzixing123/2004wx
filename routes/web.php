@@ -15,5 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::any("/Han","WX\IndexController@index");
-Route::get("/Login","Han\LoginController@Login");//登录 
-// 
+Route::any("/Login","Han\LoginController@Login");//登录
+Route::any("/list","Han\IndexController@Index");//列表
+

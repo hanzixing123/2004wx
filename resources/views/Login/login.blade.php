@@ -67,7 +67,7 @@ $(document).on("click","#button",function(){
         $("input[name='wetch_pwd']").prop("placeholder","密码不能为空!");return;
   }
   $.ajax({
-	    url:"{{url('/login')}}",
+	    url:"{{url('/Login')}}",
         type:'post',
 		dataType:'json',
 		data:{wetch_user:wetch_user,wetch_pwd:wetch_pwd,rember:rember},
