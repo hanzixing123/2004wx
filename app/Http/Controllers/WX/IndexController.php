@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 use App\Model\UserModel;
+use GuzzleHttp\Client;
 class IndexController extends Controller
 {
     //
@@ -241,5 +242,125 @@ class IndexController extends Controller
 
 
 
+
+public function Caidan(){
+          
+         $url="https://api.weixin.qq.com/cgi-bin/menu/create?access_token=".$this->get_access_token();
+      $data=[
+         "button"=>
+              [
+               
+
+                [  
+                // "type"=>"view",
+                // "name"=>"搜索",
+                // "url"=>"https://www.baidu.com/"
+                  "name"=>"villain.",
+                  "sub_button"=>
+                  [
+                    //  天气
+                    
+                    [
+                      "type"=>"pic_sysphoto", 
+                      "name"=>"拍照", 
+                      "key"=>"rselfmenu_1_0", 
+                      "sub_button"=>[ ]
+                    ], 
+                    [
+                    "type"=>"pic_photo_or_album", 
+                    "name"=>"拍照或相册", 
+                    "key"=>"rselfmenu_1_1", 
+                    "sub_button"=>[ ]
+                    ], 
+                    [
+                    "type"=>"pic_weixin", 
+                    "name"=>"相册", 
+                    "key"=>"rselfmenu_1_2", 
+                    "sub_button"=>[ ]
+                    ]
+
+
+
+
+
+                  ]
+
+
+                ],
+
+
+                [
+                 "name"=>"娱乐",
+                 "sub_button"=>
+                 [
+                    [
+                     "type"=>"view",
+                      "name"=>"视频",
+                     "url"=>"https://v.qq.com/"
+                     ],
+                    [
+                     "type"=>"view",
+                     "name"=>"音乐",
+                      "url"=>"https://music.163.com/"
+                     ],
+                    [
+                     
+                      "type"=>"view",
+                      "name"=>"游戏直播",
+                     "url"=>"https://www.huya.com/"
+                    ]
+                ]
+                ],
+
+
+                [
+                "name"=>"购物",
+                "sub_button"=> 
+                [
+                    [
+                     "type"=>"view",
+                      "name"=>"京东",
+                     "url"=>"https://www.jd.com/"
+                     ],
+                    [
+                     "type"=>"view",
+                     "name"=>"淘宝",
+                      "url"=>"https://www.taobao.com/"
+                     ],
+                    [
+                     
+                      "type"=>"view",
+                      "name"=>"天猫",
+                     "url"=>"https://www.tmall.com/"
+                    ]
+                 ]
+              ]  
+
+
+
+
+             ]
+        ];
+         $data=json_encode($data,JSON_UNESCAPED_UNICODE);
+
+        // $client=new Client();
+        // $res=$client->request("POST",$url,[
+        //     "verify"=>false,
+        //     "body"=>$data
+        //   ])
+        // $r=$res->getBody();
+        // dd($r);
+
+         // $client=new Client();
+         //$res=$client->request("GET",$url,["verify"=>false]);
+         // $r=$res->getBody();
+         //dd($r);
+
+
+        $k=$this->http_post($url,$data);
+         dd($k);
+
+
+}
 
 }
