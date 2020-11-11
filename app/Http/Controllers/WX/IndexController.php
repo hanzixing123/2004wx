@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 use App\Model\UserModel;
+use DB;
 use GuzzleHttp\Client;
 class IndexController extends Controller
 {
@@ -22,6 +23,11 @@ class IndexController extends Controller
            // $access_token=$this->get_access_token();  //跳方法  调 access_token  获取access_token
             $str=file_get_contents("php://input");
             $obj = simplexml_load_string($str,"SimpleXMLElement",LIBXML_NOCDATA);
+            $content="鹅鹅鹅，尚未开发....见谅";
+
+            file_put_contents("shuju.txt",$str,FILE_APPEND);
+                    $this->shuju($obj); // 入库数据
+//            file_put_contents("shuju.txt",$str,FILE_APPEND);//die;
             switch ($obj->MsgType) {
                 case "event":
                     if ($obj->Event == "subscribe") {
@@ -72,23 +78,23 @@ class IndexController extends Controller
                     }
                     break;
                 case "text":
-                    if($obj->Content=="讲一个笑话"){
-                            $key="97523726128a559ff65855dfd1fdd9bc";
-                            $url="http://v.juhe.cn/joke/content/list.php?key=".$key."&page=".rand(1,20)."&pagesize=15&sort=desc&time=".time();
-                            $res=json_decode($this->http_get($url),true);// 调用的笑话结果  并转化为了数组
-                            if($res["error_code"]==0){//调用接口成功
-                                $data= $res["result"]["data"];//["data"];//["data"];
-                                  // file_put_contents("ceshi.txt", json_encode($data));
-                                $content="";
-                                foreach($data as $k=>$v){
-                                    $content.=$v["content"]."\n";
-                                }
-                                file_put_contents("ceshi.txt",$content);
-                               // echo $this->xiaoxi($obj,$content);die;
-                            }
-
-                        }//else{
-
+//                    if($obj->Content=="讲一个笑话"){
+//                            $key="97523726128a559ff65855dfd1fdd9bc";
+//                            $url="http://v.juhe.cn/joke/content/list.php?key=".$key."&page=".rand(1,20)."&pagesize=15&sort=desc&time=".time();
+//                            $res=json_decode($this->http_get($url),true);// 调用的笑话结果  并转化为了数组
+//                            if($res["error_code"]==0){//调用接口成功
+//                                $data= $res["result"]["data"];//["data"];//["data"];
+//                                  // file_put_contents("ceshi.txt", json_encode($data));
+//                                $content="";
+//                                foreach($data as $k=>$v){
+//                                    $content.=$v["content"]."\n";
+//                                }
+//                                file_put_contents("ceshi.txt",$content);
+//                               // echo $this->xiaoxi($obj,$content);die;
+//                            }
+//
+//                        }//else{
+                          //   $this->text($str);//回复文本
 
                     //首先呢先要判断一下，接来的用户消息中是否有 包含天气：地址，
                             // 把用户发来的消息中 天气：替换为空，使用 str_replace 函数
@@ -149,7 +155,7 @@ class IndexController extends Controller
                             }
                     break;
                 // 聊天机器人  图灵机器人
-                    case "voice": //语音类型为 voice  // 在公众号中使用 语音  就调用 图灵机器人进行对话
+                case "voice": //语音类型为 voice  // 在公众号中使用 语音  就调用 图灵机器人进行对话
                     // 使用测试号发送语音，  微信服务器给我们的服务器发送的 XML 数据中  会有 Recognition
                     //  它是将 我们所说的语音 转换为文字, 再调用 接口 发送给 图灵机器人, 使他回话.
                         //$content=$obj->Recognition;//说什么反什么
@@ -179,10 +185,22 @@ class IndexController extends Controller
                             }
 
                     break;
+
+//                //讲用户发来的信息入库
+//                case"image"://图片
+//                        $this->image($str);
+//                    break;
+//                case "video"://视频
+//                        $this->video($str);
+//                    break;
+//                case "music":
+//                         $this->music($str);
+//                    break;
+
+
             }
+                        echo $this->xiaoxi($obj,$content);
 
-
-            echo $this->xiaoxi($obj,$content);
         }
     }
 
@@ -362,5 +380,55 @@ public function Caidan(){
 
 
 }
+
+    public function  shuju($obj){
+
+
+        if($obj->MsgType=="image"){
+            $data=[
+                "url"=>$obj->PicUrl,
+                "MediaId"=>$obj->MediaId,
+                "MsgId"=>$obj->MsgId,
+                "time"=>time(),
+                "type"=>"image",
+                "openid"=>$obj->FromUserName
+            ];
+        }
+        if($obj->MsgType=="video"){
+            $data=[
+                "ThumbMediaId"=>$obj->ThumbMediaId,
+                "MediaId"=>$obj->MediaId,
+                "MsgId"=>$obj->MsgId,
+                "time"=>time(),
+                "type"=>"video",
+                "openid"=>$obj->FromUserName
+
+            ];
+        }
+        if($obj->MsgType=="text"){
+            $data=[
+                "MsgId"=>$obj->MsgId,
+                "time"=>time(),
+                "type"=>"text",
+                "openid"=>$obj->FromUserName,
+                "Content"=>$obj->Content
+            ];
+
+
+        }
+        if($obj->MsgType=="voice"){
+            $data=[
+                "MediaId"=>$obj->MediaId,
+                "MsgId"=>$obj->MsgId,
+                "time"=>time(),
+                "type"=>"voice",
+                "openid"=>$obj->FromUserName
+            ];
+        }
+        DB::table("xinxi")->insert($data);
+
+    }
+
+
 
 }

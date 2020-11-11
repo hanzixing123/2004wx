@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b36088a5-53b3-40a2-9a08-ef4c7d4e1411" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WX/IndexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WX/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
-    </list>
+    <list default="true" id="b36088a5-53b3-40a2-9a08-ef4c7d4e1411" name="默认的" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,50 +24,32 @@
       <file leaf-file-name="IndexController.php" pinned="true" current-in-tab="true">
         <entry file="remoteDeploymentFS://&lt;f52d58c2-3092-4b3d-98bd-e474f7acbb78&gt;/app/Http/Controllers/WX/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="932">
-              <caret line="214" column="33" lean-forward="false" selection-start-line="214" selection-start-column="22" selection-end-line="214" selection-end-column="33" />
+            <state relative-caret-position="155">
+              <caret line="407" column="34" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="434" selection-end-column="0" />
               <folding>
-                <marker date="0" expanded="true" signature="11395:11712" ph="..." />
+                <element signature="e#43#79#0#PHP" expanded="true" />
+                <element signature="e#3671#3720#0#PHP" expanded="false" />
+                <marker date="0" expanded="true" signature="11656:11973" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.blade.php" pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;f52d58c2-3092-4b3d-98bd-e474f7acbb78&gt;/resources/views/Login/login.blade.php">
+      <file leaf-file-name=".env" pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;f52d58c2-3092-4b3d-98bd-e474f7acbb78&gt;/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-462">
-              <caret line="19" column="7" lean-forward="false" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+            <state relative-caret-position="330">
+              <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.php" pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;f52d58c2-3092-4b3d-98bd-e474f7acbb78&gt;/app/Http/Controllers/Han/LoginController.php">
+      <file leaf-file-name="shuju.txt" pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;f52d58c2-3092-4b3d-98bd-e474f7acbb78&gt;/public/shuju.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="24" column="12" lean-forward="false" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ceshi.txt" pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;f52d58c2-3092-4b3d-98bd-e474f7acbb78&gt;/public/ceshi.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tianqishuju.txt" pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;f52d58c2-3092-4b3d-98bd-e474f7acbb78&gt;/public/tianqishuju.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="40" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="40" />
+            <state relative-caret-position="99">
+              <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -106,6 +84,7 @@
         <option value="&lt;f52d58c2-3092-4b3d-98bd-e474f7acbb78&gt;/app/Http/Controllers/Han/IndexController.php" />
         <option value="&lt;f52d58c2-3092-4b3d-98bd-e474f7acbb78&gt;/public/ceshi.txt" />
         <option value="&lt;f52d58c2-3092-4b3d-98bd-e474f7acbb78&gt;/routes/web.php" />
+        <option value="&lt;f52d58c2-3092-4b3d-98bd-e474f7acbb78&gt;/public/shuju.txt" />
         <option value="&lt;f52d58c2-3092-4b3d-98bd-e474f7acbb78&gt;/.env" />
         <option value="&lt;f52d58c2-3092-4b3d-98bd-e474f7acbb78&gt;/app/Http/Controllers/WX/IndexController.php" />
       </list>
@@ -346,12 +325,12 @@
       <workItem from="1604811218838" duration="14147000" />
       <workItem from="1604878665444" duration="11546000" />
       <workItem from="1604909169161" duration="16776000" />
-      <workItem from="1604964951391" duration="12595000" />
+      <workItem from="1604964951391" duration="21914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108728000" />
+    <option name="totallyTimeSpent" value="118047000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -363,8 +342,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -404,8 +382,8 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19722815" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17270789" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14179105" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17910448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -439,8 +417,13 @@
           <line>4</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>remoteDeploymentFS://&lt;f52d58c2-3092-4b3d-98bd-e474f7acbb78&gt;/app/Http/Controllers/WX/IndexController.php</url>
+          <line>154</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
